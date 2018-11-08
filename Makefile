@@ -6,7 +6,7 @@
 #    By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/23 16:03:09 by flcarre           #+#    #+#              #
-#    Updated: 2018/11/08 19:34:56 by flcarre          ###   ########.fr        #
+#    Updated: 2018/11/08 19:41:28 by flcarre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,6 @@ SRCS =	./ft_atoi.c			\
 		./ft_strncmp.c		\
 		./ft_strncpy.c		\
 		./ft_strstr.c		\
-		./ft_swap.c			\
 		./ft_tolower.c		\
 		./ft_toupper.c		\
 		./ft_memchr.c		\
@@ -63,13 +62,7 @@ SRCS =	./ft_atoi.c			\
 		./ft_putnbr_fd.c	\
 		./ft_putendl_fd.c	\
 		./ft_putendl.c		\
-		./ft_strsplit.c		\
-		./ft_lstnew.c		\
-		./ft_lstadd.c		\
-		./ft_lstdelone.c	\
-		./ft_lstiter.c		\
-		./ft_lstdel.c		\
-		./ft_lstmap.c
+		./ft_strsplit.c		
 
 OBJ = $(SRCS:.c=.o)
 CC = gcc -Wall -Werror -Wextra -I ./
