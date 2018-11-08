@@ -6,7 +6,7 @@
 #    By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/23 16:03:09 by flcarre           #+#    #+#              #
-#    Updated: 2018/11/08 19:29:48 by flcarre          ###   ########.fr        #
+#    Updated: 2018/11/08 19:34:56 by flcarre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,19 +77,19 @@ CC = gcc -Wall -Werror -Wextra -I ./
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		@echo "GENERATE LIBRARY"
-		@$(CC) -c $(SRCS)
-		@ar rc $(NAME) $(OBJ)
-		@ranlib $(NAME)
-		@ echo "LIBRARY CREATED !"
+		echo "GENERATE LIBRARY"
+		$(CC) -c $(SRCS)
+		ar rc $(NAME) $(OBJ)
+		ranlib $(NAME)
+		 echo "LIBRARY CREATED !"
 
 clean:
-		@echo "CLEANING OBJECTS FILES"
-		@rm -rf $(OBJ)
+		echo "CLEANING OBJECTS FILES"
+		rm -rf $(OBJ)
 
 fclean: clean
-	    @echo "RESETING ALL"
-		@rm -rf $(NAME)
+	    echo "RESETING ALL"
+		rm -rf $(NAME)
 
 re: fclean all
 
