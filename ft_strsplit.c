@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 17:38:56 by flcarre           #+#    #+#             */
-/*   Updated: 2018/11/08 15:10:40 by flcarre          ###   ########.fr       */
+/*   Updated: 2018/11/09 11:41:09 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	**ft_strsplit(char *str, char c)
 {
 	int			i;
 	int			j;
-	int			n;
+	unsigned int			n;
 	char		**tab;
 
 	i = 0;

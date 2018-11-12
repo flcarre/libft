@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 16:04:20 by flcarre           #+#    #+#             */
-/*   Updated: 2018/11/07 14:14:40 by flcarre          ###   ########.fr       */
+/*   Updated: 2018/11/09 17:53:45 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,27 @@
 
 char	*ft_strnstr(char *str, char *to_find, size_t l)
 {
-	int		i;
-	int		n;
+	unsigned int		i;
+	unsigned int 	j;
+	unsigned int		n;
 
 	i = 0;
+	j = 0;
 	n = 0;
-	while (to_find[i] != '\0')
-		i++;
-	if (i == 0)
-		return (str);
-	i = 0;
-	while (str[i])
+	if (!to_find[0])
+		return(str);
+	while (to_find[n] != '\0')
+		n++;
+	while (str[i] && l >= n)
 	{
-			while (str[i + n] == to_find[n] && l)
+			while (str[i + j] == to_find[j])
 			{
-				if (to_find[n + 1] == '\0')
+				if (j + 1 == n)
 					return (str + i);
-				n++;
-				l--;
+				j++;
 			}
-		n = 0;
+		l--;
+		j = 0;
 		i++;
 	}
 	return (0);

@@ -6,13 +6,13 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/02 11:02:33 by flcarre           #+#    #+#             */
-/*   Updated: 2018/11/07 16:06:49 by flcarre          ###   ########.fr       */
+/*   Updated: 2018/11/09 11:37:52 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	int i;
 

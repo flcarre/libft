@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/31 16:19:29 by flcarre           #+#    #+#             */
-/*   Updated: 2018/11/08 19:15:31 by flcarre          ###   ########.fr       */
+/*   Updated: 2018/11/09 16:46:50 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ static int size(int nb)
 		int i;
 
 		i = 0;
-		if (nb < 10)
-			i = 1;
+		if (nb < 10 && nb >= 0)
+			return(1);
 		while(nb != 0)
 		{
 			nb = nb / 10;
@@ -40,17 +40,17 @@ char	*ft_itoa(int n)
 	char *str;
 	int		neg;
 
-	s = size(n);
 	neg = (n >= 0) ? 0 : 1;
+	s = size(n) + neg;
 	if ((str = (char*)malloc(sizeof(*str) * s + 1)) == NULL)
 		return (NULL);
+	if (neg)
+		str[0] = '-';
 	str[s] = '\0';
-	while(s != 0)
+	while(s != 0 + neg)
 	{
 		str[--s] = (ft_abs(n % 10) + 48);
 		n = ft_abs(n / 10);
 	}
-	if (neg)
-		str[0] = '-';
 	return(str);
 }
