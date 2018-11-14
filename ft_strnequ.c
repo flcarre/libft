@@ -6,25 +6,25 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 17:38:56 by flcarre           #+#    #+#             */
-/*   Updated: 2018/11/09 16:30:47 by flcarre          ###   ########.fr       */
+/*   Updated: 2018/11/14 09:46:39 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strnequ(char const *s1, char const *s2, size_t i)
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	int n;
+	int j;
 
-	n = 0;
+	j = 0;
 	if (s1 && s2)
 	{
-		while(s1[n] && s2[n] && i)
+		while(s1[j] && s2[j] && n)
 		{
-			if (s1[n] != s2[n])
+			if (s1[j] != s2[j])
 				return(0);
-			n++;
-			i--;
+			j++;
+			n--;
 		}
 	}
 	return(1);

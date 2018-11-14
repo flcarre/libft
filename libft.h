@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 14:10:16 by flcarre           #+#    #+#             */
-/*   Updated: 2018/11/09 11:39:09 by flcarre          ###   ########.fr       */
+/*   Updated: 2018/11/14 10:00:15 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,13 @@ int		ft_isprint(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 void	ft_putchar(char c);
-void	ft_putstr(char *str);
-void	ft_putendl(char *str);
+void	ft_putstr(char const *s);
+void	ft_putendl(char const *s);
+void	ft_putnbr(int n);
 void	ft_putchar_fd(char c, int fd);
-void	ft_putendl_fd(char *str, int fd);
-void	ft_putnbr_fd(int nb, int fd);
-void	ft_putstr_fd(char *str, int fd);
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putstr_fd(char const *s, int fd);
 char	*ft_strnew(size_t n);
 void ft_strdel(char **as);
 void	ft_striteri(char *str, void (*f)(unsigned int, char *));
@@ -66,7 +67,7 @@ char	*ft_strmapi(char const *str, char (*f)(unsigned int, char));
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strsub(char const *str, unsigned int start, size_t n);
 char	*ft_strtrim(char const *str);
-char	**ft_strsplit(char *str, char c);
+char	**ft_strsplit(char const *str, char c);
 size_t		ft_strlen(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);

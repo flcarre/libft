@@ -6,13 +6,13 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/02 11:01:38 by flcarre           #+#    #+#             */
-/*   Updated: 2018/11/07 14:52:34 by flcarre          ###   ########.fr       */
+/*   Updated: 2018/11/14 09:58:56 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *str, int fd)
+void	ft_putstr_fd(char const *s, int fd)
 {
 	if (!str)
 		return ;

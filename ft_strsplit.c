@@ -6,13 +6,13 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 17:38:56 by flcarre           #+#    #+#             */
-/*   Updated: 2018/11/09 11:41:09 by flcarre          ###   ########.fr       */
+/*   Updated: 2018/11/14 09:51:14 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		size_wd(char *str, int i, char c)
+static int		size_wd(char const *str, int i, char c)
 {
 	int n;
 
@@ -24,7 +24,7 @@ static int		size_wd(char *str, int i, char c)
 	return (n);
 }
 
-static int		word_count(char *str, char c)
+static int		word_count(char const *str, char c)
 {
 	int i;
 	int n;
@@ -42,7 +42,7 @@ static int		word_count(char *str, char c)
 	return (n + 1);
 }
 
-char	**ft_strsplit(char *str, char c)
+char	**ft_strsplit(char const *s, char c)
 {
 	int			i;
 	int			j;
@@ -52,18 +52,18 @@ char	**ft_strsplit(char *str, char c)
 	i = 0;
 	j = 0;
 	n = 0;
-	if (!str)
+	if (!s)
 		return(NULL);
-	if ((tab = malloc(word_count(str, c) * sizeof(char*))) == NULL)
+	if ((tab = malloc(word_count(s, c) * sizeof(char*))) == NULL)
 		return(NULL);
-	while (n < ft_strlen(str))
+	while (n < ft_strlen(s))
 	{
-		while (str[n] == c)
+		while (s[n] == c)
 			n++;
-		if ((tab[i] = malloc((size_wd(str, n, c)) * sizeof(char))) == NULL)
+		if ((tab[i] = malloc((size_wd(s, n, c)) * sizeof(char))) == NULL)
 			return(NULL);
-		while (str[n] != c && str[n])
-			tab[i][j++] = str[n++];
+		while (s[n] != c && s[n])
+			tab[i][j++] = s[n++];
 		if (tab[i][0] != 0 && tab[i][0] != 1)
 		{
 			tab[i][j] = '\0';

@@ -6,13 +6,13 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 17:38:56 by flcarre           #+#    #+#             */
-/*   Updated: 2018/11/08 10:39:01 by flcarre          ###   ########.fr       */
+/*   Updated: 2018/11/14 09:49:13 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *str)
+char	*ft_strtrim(char const *s)
 {
 	int i;
 	int n;
@@ -22,18 +22,18 @@ char	*ft_strtrim(char const *str)
 	i = 0;
 	j = 0;
 	ret = NULL;
-	if (str)
-		n = ft_strlen(str) - 1;
-	if (str)
+	if (s)
+		n = ft_strlen(s) - 1;
+	if (s)
 	{
-		while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t')
+		while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 			i++;
-		while ((str[n] == ' ' || str[n] == '\n' || str[n] == '\t') && n > i)
+		while ((s[n] == ' ' || s[n] == '\n' || s[n] == '\t') && n > i)
 			n--;
 		if((ret = malloc((n - i + 2) * sizeof(char))) == NULL)
 			return (NULL);
 		while(i <= n)
-			ret[j++] = str[i++];
+			ret[j++] = s[i++];
 		ret[j] = 0;
 	}
 	return(ret);
