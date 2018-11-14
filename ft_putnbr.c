@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/31 16:19:29 by flcarre           #+#    #+#             */
-/*   Updated: 2018/11/14 09:57:51 by flcarre          ###   ########.fr       */
+/*   Updated: 2018/11/14 13:26:55 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_putnbr(int n)
 		ft_putchar('-');
 		nb = -n;
 	}
-	if (n < 10)
+	if (nb < 10)
 		ft_putchar(nb + 48);
 	else
 	{

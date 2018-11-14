@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 17:38:56 by flcarre           #+#    #+#             */
-/*   Updated: 2018/11/14 09:42:38 by flcarre          ###   ########.fr       */
+/*   Updated: 2018/11/14 13:56:37 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_strclr(char *s)
 	if (s)
 	{
 		n = ft_strlen(s);
-		while(n)
+		while (n)
 			s[n--] = '\0';
 		s[n] = '\0';
 	}

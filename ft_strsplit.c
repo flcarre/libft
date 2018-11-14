@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 17:38:56 by flcarre           #+#    #+#             */
-/*   Updated: 2018/11/14 09:51:14 by flcarre          ###   ########.fr       */
+/*   Updated: 2018/11/14 14:51:57 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int		size_wd(char const *str, int i, char c)
 {
-	int n;
+	int				n;
 
 	n = 0;
 	while (str[i] != '\0' && str[i] == c)
@@ -26,8 +26,8 @@ static int		size_wd(char const *str, int i, char c)
 
 static int		word_count(char const *str, char c)
 {
-	int i;
-	int n;
+	int				i;
+	int				n;
 
 	i = 0;
 	n = 0;
@@ -42,35 +42,31 @@ static int		word_count(char const *str, char c)
 	return (n + 1);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	int			i;
-	int			j;
-	unsigned int			n;
-	char		**tab;
+	unsigned int	*i;
+	char			**tab;
 
-	i = 0;
-	j = 0;
-	n = 0;
+	i = ft_memalloc(4);
 	if (!s)
-		return(NULL);
+		return (NULL);
 	if ((tab = malloc(word_count(s, c) * sizeof(char*))) == NULL)
-		return(NULL);
-	while (n < ft_strlen(s))
+		return (NULL);
+	while (i[2] < ft_strlen(s))
 	{
-		while (s[n] == c)
-			n++;
-		if ((tab[i] = malloc((size_wd(s, n, c)) * sizeof(char))) == NULL)
-			return(NULL);
-		while (s[n] != c && s[n])
-			tab[i][j++] = s[n++];
-		if (tab[i][0] != 0 && tab[i][0] != 1)
+		while (s[i[2]] == c)
+			i[2]++;
+		if ((tab[i[0]] = malloc((size_wd(s, i[2], c)) * sizeof(char))) == NULL)
+			return (NULL);
+		while (s[i[2]] != c && s[i[2]])
+			tab[i[0]][i[1]++] = s[i[2]++];
+		if (tab[i[0]][0] != 0 && tab[i[0]][0] != 1)
 		{
-			tab[i][j] = '\0';
-			i++;
-			j = 0;
+			tab[i[0]][i[1]] = '\0';
+			i[0]++;
+			i[1] = 0;
 		}
 	}
-	tab[i] = 0;
+	tab[i[0]] = 0;
 	return (tab);
 }
