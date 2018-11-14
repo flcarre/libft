@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 16:07:38 by flcarre           #+#    #+#             */
-/*   Updated: 2018/11/09 14:50:11 by flcarre          ###   ########.fr       */
+/*   Updated: 2018/11/14 15:49:12 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 		ret += n;
 	else
 		ret += j;
-	while (j < n - 1)
+	while (j < n - 1 && src[i])
 	{
 		dst[j] = src[i];
 		j++;
