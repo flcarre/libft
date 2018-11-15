@@ -6,28 +6,16 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 17:38:56 by flcarre           #+#    #+#             */
-/*   Updated: 2018/11/14 14:51:57 by flcarre          ###   ########.fr       */
+/*   Updated: 2018/11/14 17:51:32 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		size_wd(char const *str, int i, char c)
-{
-	int				n;
-
-	n = 0;
-	while (str[i] != '\0' && str[i] == c)
-		i++;
-	while (str[i + n] != '\0' && str[i + n] != c)
-		n++;
-	return (n);
-}
-
 static int		word_count(char const *str, char c)
 {
-	int				i;
-	int				n;
+	int i;
+	int n;
 
 	i = 0;
 	n = 0;
@@ -42,31 +30,53 @@ static int		word_count(char const *str, char c)
 	return (n + 1);
 }
 
+static	char	*ft_add(char *str, char c)
+{
+	int		i;
+	int		k;
+	char	*word;
+
+	i = 0;
+	k = 0;
+	while (str[k] && str[k] != c)
+		k++;
+	word = malloc(sizeof(char) * k + 1);
+	if (word == NULL)
+		return (NULL);
+	while (str[i] && str[i] != c)
+	{
+		word[i] = str[i];
+		i++;
+	}
+	word[i] = '\0';
+	return (word);
+}
+
 char			**ft_strsplit(char const *s, char c)
 {
-	unsigned int	*i;
-	char			**tab;
+	int		i;
+	int		k;
+	char	**tab;
 
-	i = ft_memalloc(4);
-	if (!s)
+	if (s == NULL)
 		return (NULL);
-	if ((tab = malloc(word_count(s, c) * sizeof(char*))) == NULL)
+	i = 0;
+	k = word_count((char*)s, c);
+	tab = malloc(sizeof(char*) * k + 1);
+	if (tab == NULL)
 		return (NULL);
-	while (i[2] < ft_strlen(s))
+	while (*s)
 	{
-		while (s[i[2]] == c)
-			i[2]++;
-		if ((tab[i[0]] = malloc((size_wd(s, i[2], c)) * sizeof(char))) == NULL)
-			return (NULL);
-		while (s[i[2]] != c && s[i[2]])
-			tab[i[0]][i[1]++] = s[i[2]++];
-		if (tab[i[0]][0] != 0 && tab[i[0]][0] != 1)
+		if (*s && *s == c)
+			s++;
+		if (*s && *s != c)
 		{
-			tab[i[0]][i[1]] = '\0';
-			i[0]++;
-			i[1] = 0;
+			tab[i] = ft_add((char*)s, c);
+			i++;
+			while (*s && *s != c)
+				s++;
 		}
 	}
-	tab[i[0]] = 0;
+	tab[i] = NULL;
 	return (tab);
 }
